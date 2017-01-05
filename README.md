@@ -15,10 +15,11 @@ docker build -t fastglass/alpine-mysql .
 
 If you want to create a database and user, in your build statement specify the following variables
 
-```$CREATE_MYSQL_BASIC_USER_AND_DB (set to any variable)
-$MYSQL_USER_NAME <name>
-$MYSQL_USER_DB <db_name>
-$MYSQL_USER_PASS <pass>
+```
+$CREATE_MYSQL_BASIC_USER_AND_DB=1
+$MYSQL_USER_NAME="somename"
+$MYSQL_USER_DB="somedbname"
+$MYSQL_USER_PASS="somepassword"
 ```
 
 # Usage
