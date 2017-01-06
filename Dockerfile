@@ -3,10 +3,10 @@ MAINTAINER Brady Owens <brady@fastglass.net>
 
 ADD scripts/start-mysqld.sh /start-mysqld.sh
 ADD scripts/run.sh /run.sh
-RUN chmod 755 /*.sh
 
-RUN apk add --update mysql mysql-client && rm -f /var/cache/apk/*
-COPY my.cnf /etc/mysql/my.cnf
+# Add MySQL utils
+ADD scripts/create-mysql-users.sh /create-mysql-users.sh
+RUN chmod 755 /*.sh && apk add --update mysql mysql-client && rm -f /var/cache/apk/*
 
 # Add volumes for MySql
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
